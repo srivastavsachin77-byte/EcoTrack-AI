@@ -1,0 +1,17 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EcoTrack</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h2>Carbon Footprint Calculator</h2>
+  <form action="/calculate" method="post">
+    Transport (km/day): <input name="transport"><br>
+    Electricity (kWh/day): <input name="electricity"><br>
+    Food (meals/day): <input name="food"><br>
+    <button type="submit">Calculate</button>
+  </form>
+</body>
+</html>
