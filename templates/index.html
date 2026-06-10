@@ -1,17 +1,34 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>EcoTrack</title>
-  <link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrack-AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <h2>Carbon Footprint Calculator</h2>
-  <form action="/calculate" method="post">
-    Transport (km/day): <input name="transport"><br>
-    Electricity (kWh/day): <input name="electricity"><br>
-    Food (meals/day): <input name="food"><br>
-    <button type="submit">Calculate</button>
-  </form>
+    <header>
+        <h1>EcoTrack-AI</h1>
+        <p>Track your daily carbon footprint and get eco-friendly suggestions.</p>
+    </header>
+
+    <main>
+        <form action="/calculate" method="POST">
+            <label for="transport">Transport (km):</label>
+            <input type="number" id="transport" name="transport" min="0" step="0.1" required aria-label="Transport distance in kilometers">
+
+            <label for="electricity">Electricity (kWh):</label>
+            <input type="number" id="electricity" name="electricity" min="0" step="0.1" required aria-label="Electricity usage in kilowatt hours">
+
+            <label for="food">Food (units):</label>
+            <input type="number" id="food" name="food" min="0" step="0.1" required aria-label="Food consumption units">
+
+            <button type="submit">Calculate Footprint</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 EcoTrack-AI | Built by Sachin</p>
+    </footer>
 </body>
 </html>
