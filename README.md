@@ -14,3 +14,11 @@ EcoTrack-AI is a simple web application that helps users estimate their daily ca
 ---
 
 ## 📂 Project Structure
+
+---
+
+
+
+## 🌐 Deployment
+- Frontend: https://srivastavsachin77-byte.github.io/EcoTrack-AI/
+- Backend: https://ecotrack-ai-1-tucz.onrender.com
