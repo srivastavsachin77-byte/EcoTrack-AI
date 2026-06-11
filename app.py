@@ -28,12 +28,21 @@ def validate_input(value, field_name: str) -> float:
         raise ValueError(f"{field_name} must be a valid number")
 
 # --- Emission Calculation ---
-def calculate_emissions(**kwargs) -> float:
+def calculate_emissions(transport: float, electricity: float, food: float) -> float:
     """
-    Calculate daily carbon footprint based on inputs.
-    Accepts keyword arguments like transport=20, electricity=15, food=10.
+    Optimized emission calculation.
+    Args:
+        transport (float): Transport usage value
+        electricity (float): Electricity usage value
+        food (float): Food consumption value
+    Returns:
+        float: Carbon footprint in kg CO₂/day
     """
-    return sum(kwargs.get(key, 0) * FACTORS[key] for key in FACTORS)
+    factors = FACTORS
+    return (transport * factors["transport"] +
+            electricity * factors["electricity"] +
+            food * factors["food"])
+
 
 # --- AI Suggestions ---
 def suggest_actions(footprint: float) -> str:
