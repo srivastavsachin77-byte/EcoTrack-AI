@@ -72,10 +72,8 @@ def calculate():
         electricity = validate_input(request.form.get('electricity', 0), "Electricity")
         food = validate_input(request.form.get('food', 0), "Food")
 
-        footprint = calculate_emissions(
-            transport=transport,
-            electricity=electricity,
-            food=food
+       footprint = calculate_emissions(transport, electricity, food)
+
         )
         suggestion = suggest_actions(footprint)
 
