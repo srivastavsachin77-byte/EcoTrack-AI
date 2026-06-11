@@ -72,7 +72,7 @@ def calculate():
         electricity = validate_input(request.form.get('electricity', 0), "Electricity")
         food = validate_input(request.form.get('food', 0), "Food")
 
-       footprint = calculate_emissions(transport, electricity, food)
+        footprint = calculate_emissions(transport, electricity, food)
         suggestion = suggest_actions(footprint)
 
         return f"Your estimated carbon footprint is {footprint:.2f} kg CO₂/day.<br>{suggestion}"
